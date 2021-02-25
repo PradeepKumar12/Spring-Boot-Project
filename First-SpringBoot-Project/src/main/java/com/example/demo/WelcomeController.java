@@ -16,8 +16,11 @@ public class WelcomeController {
 		return "welcome";
 	}
 	
-	/*
-	 * @RequestMapping("/home") public String home() { return "home"; }
-	 */
+	
+	  @RequestMapping("/home") 
+	  public String home1() {
+		  return "home"; 
+		  }
+	 
 	 
 }
