@@ -1,10 +1,12 @@
 package com.springboot.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.springboot.dto.PersonDTO;
 import com.springboot.model.Person;
 import com.springboot.repositories.PersonRepositories;
 
@@ -49,6 +51,19 @@ public class PersonServiceImpl implements PersonService {
 //Delete All Person
 	public void deleteAlPerson() {
 		personRepositories.deleteAll();
+	}
+
+//
+	public List<PersonDTO> getAllPersons() {	
+		List<Person> list=personRepositories.findAll();
+		List<PersonDTO> personDTO=new ArrayList<>();
+		for(Person pe:list) {
+			PersonDTO person=new PersonDTO();
+			person.setAddress(pe.getAddressDetails());
+			person.setId(pe.getId());
+			personDTO.add(person);
+		}
+		return personDTO;
 	}
 
 

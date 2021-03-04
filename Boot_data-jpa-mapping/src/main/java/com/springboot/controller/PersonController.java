@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.dto.AddressDTO;
+import com.springboot.dto.PersonDTO;
 import com.springboot.model.Person;
 import com.springboot.service.PersonService;
 
@@ -58,9 +60,13 @@ public class PersonController {
 		personService.deleteAlPerson();
 	}
 	
+// Get Person_id and address handler
+	@GetMapping("/address")
+	public List<PersonDTO> getAddressPerson() {
+		return personService.getAllPersons();
+	
+	}
+	
 
-	
-	
-	
 	
 }
