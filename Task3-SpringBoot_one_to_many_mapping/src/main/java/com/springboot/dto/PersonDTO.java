@@ -9,6 +9,8 @@ import lombok.Data;
 @Data
 public class PersonDTO{
 
-	private Integer id;
+	private Integer personId;
 	private Set<AddressDetails> address;
+	
+	
 }
